@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LearningInterfaces.Entities
+﻿namespace LearningInterfaces.Entities
 {
     class Invoice
     {
@@ -23,7 +19,7 @@ namespace LearningInterfaces.Entities
 
         public override string ToString()
         {
-            return $"Basic payment: {BasicPayment:F2} \nTax: {Tax:F2} \nTotal payment: {TotalPayment:F2}" ;
+            return $"Basic payment: {BasicPayment:F2} \nTax: {Tax:F2} \nTotal payment: {TotalPayment:F2}";
         }
 
     }

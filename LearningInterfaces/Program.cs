@@ -1,7 +1,7 @@
-﻿using System;
-using System.Globalization;
-using LearningInterfaces.Entities;
+﻿using LearningInterfaces.Entities;
 using LearningInterfaces.Services;
+using System;
+using System.Globalization;
 
 namespace LearningInterfaces
 {
@@ -17,13 +17,13 @@ namespace LearningInterfaces
             Console.Write("Return (MM/dd/yyyy hh:mm): ");
             DateTime finish = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
             Console.Write("Enter price per hour: ");
-            double hour = double.Parse(Console.ReadLine()); 
+            double hour = double.Parse(Console.ReadLine());
             Console.Write("Enter price per day: ");
             double day = double.Parse(Console.ReadLine());
 
             CarRental carRental = new CarRental(start, finish, new Vehicle(model));
 
-            RentalService rentalService = new RentalService(hour, day);
+            RentalService rentalService = new RentalService(hour, day, new BrazilTaxService());
 
             rentalService.ProcessInvoice(carRental);
 
